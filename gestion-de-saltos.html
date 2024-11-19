@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Saltos de Línea - Herramientas Online</title>
+    <meta name="description" content="Herramienta gratuita para añadir o eliminar saltos de línea en tu texto. Gestiona fácilmente el formato de tu contenido.">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/gestion-de-saltos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="back-button-container">
+        <a href="/" class="back-button">
+            <i class="fas fa-arrow-left"></i>
+            <span>Volver a Herramientas</span>
+        </a>
+    </div>
+
+    <div class="tool-container">
+        <div class="tool-header">
+            <h1><i class="fas fa-paragraph"></i> Gestión de Saltos de Línea</h1>
+            <p class="tool-description">Añade o elimina saltos de línea en tu texto de forma sencilla</p>
+        </div>
+
+        <div class="main-content">
+            <div class="input-section">
+                <div class="section-header">
+                    <label for="inputText">
+                        <i class="fas fa-file-import"></i> Texto Original
+                    </label>
+                </div>
+                <textarea id="inputText" placeholder="Pega aquí tu texto..."></textarea>
+            </div>
+
+            <div class="controls-section">
+                <div class="control-group">
+                    <h3>Opciones de Conversión</h3>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="lineBreakOption" value="add" checked>
+                            <span>Añadir saltos de línea</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="lineBreakOption" value="remove">
+                            <span>Eliminar saltos de línea</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <button id="convertButton" class="btn primary">
+                        <i class="fas fa-magic"></i>
+                        Convertir
+                    </button>
+                    <button id="clearButton" class="btn secondary">
+                        <i class="fas fa-eraser"></i>
+                        Limpiar
+                    </button>
+                    <button id="copyButton" class="btn success">
+                        <i class="fas fa-copy"></i>
+                        Copiar Resultado
+                    </button>
+                </div>
+            </div>
+
+            <div class="output-section">
+                <div class="section-header">
+                    <label for="outputText">
+                        <i class="fas fa-file-export"></i> Resultado
+                    </label>
+                </div>
+                <textarea id="outputText" readonly placeholder="El resultado aparecerá aquí..."></textarea>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/gestion-de-saltos.js"></script>
+</body>
+</html>

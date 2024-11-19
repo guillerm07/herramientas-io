@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combinar Textos - Herramientas Online</title>
+    <meta name="description" content="Combina dos textos línea a línea. Herramienta gratuita para unir contenido.">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/combinar-textos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="back-button-container">
+        <a href="/" class="back-button">
+            <i class="fas fa-arrow-left"></i>
+            <span>Volver a Herramientas</span>
+        </a>
+    </div>
+
+    <div class="tool-container">
+        <div class="tool-header">
+            <h1><i class="fas fa-object-group"></i> Combinar Textos</h1>
+            <p class="tool-description">Combina dos textos línea a línea con opciones personalizadas</p>
+        </div>
+
+        <div class="main-content">
+            <div class="input-grid">
+                <div class="input-section">
+                    <div class="section-header">
+                        <label for="firstText">
+                            <i class="fas fa-file-alt"></i> Primer Texto
+                        </label>
+                        <span class="first-count">0 líneas</span>
+                    </div>
+                    <textarea id="firstText" placeholder="Pega aquí el primer texto..."></textarea>
+                </div>
+
+                <div class="input-section">
+                    <div class="section-header">
+                        <label for="secondText">
+                            <i class="fas fa-file-alt"></i> Segundo Texto
+                        </label>
+                        <span class="second-count">0 líneas</span>
+                    </div>
+                    <textarea id="secondText" placeholder="Pega aquí el segundo texto..."></textarea>
+                </div>
+            </div>
+
+            <div class="controls-section">
+                <div class="separator-group">
+                    <h3>Separador</h3>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="separator" value="space" checked>
+                            <span>Espacio</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="separator" value="tab">
+                            <span>Tabulación</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="separator" value="comma">
+                            <span>Coma</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="separator" value="newline">
+                            <span>Nueva línea</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="separator" value="custom">
+                            <span>Personalizado:</span>
+                            <input type="text" id="customSeparator" placeholder="Separador..." maxlength="10">
+                        </label>
+                    </div>
+                </div>
+
+                <div class="options-group">
+                    <h3>Opciones</h3>
+                    <div class="checkbox-group">
+                        <label class="checkbox-option">
+                            <input type="checkbox" id="trimSpaces" checked>
+                            <span>Eliminar espacios al inicio y final</span>
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" id="skipEmpty" checked>
+                            <span>Saltar líneas vacías</span>
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" id="alternateOrder">
+                            <span>Alternar orden (1º-2º, 2º-1º, ...)</span>
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" id="numberLines">
+                            <span>Numerar líneas</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <button id="clearButton" class="btn secondary">
+                        <i class="fas fa-eraser"></i>
+                        Limpiar
+                    </button>
+                    <button id="processButton" class="btn primary">
+                        <i class="fas fa-magic"></i>
+                        Combinar
+                    </button>
+                </div>
+            </div>
+
+            <div class="output-section">
+                <div class="section-header">
+                    <label for="outputText">
+                        <i class="fas fa-file-export"></i> Resultado
+                    </label>
+                    <div class="output-stats">
+                        <span class="combined-count">0 combinadas</span>
+                        <span class="remaining-count">0 líneas</span>
+                    </div>
+                </div>
+                <textarea id="outputText" readonly placeholder="El texto combinado aparecerá aquí..."></textarea>
+                <button id="copyButton" class="btn success">
+                    <i class="fas fa-copy"></i>
+                    Copiar Resultado
+                </button>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h3><i class="fas fa-info-circle"></i> Información</h3>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h4>Separadores</h4>
+                    <p>Elige entre espacio, tabulación, coma, nueva línea o un separador personalizado</p>
+                </div>
+                <div class="info-card">
+                    <h4>Orden Alternado</h4>
+                    <p>Alterna el orden de combinación entre los dos textos</p>
+                </div>
+                <div class="info-card">
+                    <h4>Numeración</h4>
+                    <p>Añade números secuenciales al inicio de cada línea</p>
+                </div>
+                <div class="info-card">
+                    <h4>Limpieza</h4>
+                    <p>Elimina espacios innecesarios y líneas vacías automáticamente</p>
+                </div>
+                <div class="info-card">
+                    <h4>Longitudes Diferentes</h4>
+                    <p>Maneja textos de diferente longitud rellenando con líneas vacías</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/combinar-textos.js"></script>
+</body>
+</html>

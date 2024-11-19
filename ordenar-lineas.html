@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ordenar Líneas - Herramientas Online</title>
+    <meta name="description" content="Ordena líneas de texto alfabéticamente, numéricamente o al azar. Herramienta gratuita para organizar contenido.">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/ordenar-lineas.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="back-button-container">
+        <a href="/" class="back-button">
+            <i class="fas fa-arrow-left"></i>
+            <span>Volver a Herramientas</span>
+        </a>
+    </div>
+
+    <div class="tool-container">
+        <div class="tool-header">
+            <h1><i class="fas fa-sort-alpha-down"></i> Ordenar Líneas</h1>
+            <p class="tool-description">Ordena las líneas de tu texto de forma alfabética, numérica o aleatoria</p>
+        </div>
+
+        <div class="main-content">
+            <div class="input-section">
+                <div class="section-header">
+                    <label for="inputText">
+                        <i class="fas fa-file-import"></i> Texto Original
+                    </label>
+                    <span class="line-count">0 líneas</span>
+                </div>
+                <textarea id="inputText" placeholder="Pega aquí tu texto para ordenar..."></textarea>
+            </div>
+
+            <div class="controls-section">
+                <div class="options-group">
+                    <h3>Opciones de Ordenamiento</h3>
+                    
+                    <div class="radio-group">
+                        <h4>Tipo de Ordenamiento</h4>
+                        <label class="radio-option">
+                            <input type="radio" name="sortType" value="alphabetical" checked>
+                            <span>Alfabético</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="sortType" value="numerical">
+                            <span>Numérico</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="sortType" value="length">
+                            <span>Por longitud</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="sortType" value="random">
+                            <span>Aleatorio</span>
+                        </label>
+                    </div>
+
+                    <div class="checkbox-group">
+                        <label class="checkbox-option">
+                            <input type="checkbox" id="reverseOrder">
+                            <span>Orden inverso</span>
+                        </label>
+                        
+                        <label class="checkbox-option">
+                            <input type="checkbox" id="caseSensitive">
+                            <span>Distinguir mayúsculas/minúsculas</span>
+                        </label>
+                        
+                        <label class="checkbox-option">
+                            <input type="checkbox" id="ignoreArticles">
+                            <span>Ignorar artículos (el, la, los, las, un, una)</span>
+                        </label>
+
+                        <label class="checkbox-option">
+                            <input type="checkbox" id="trimSpaces" checked>
+                            <span>Eliminar espacios al inicio y final</span>
+                        </label>
+
+                        <label class="checkbox-option">
+                            <input type="checkbox" id="removeEmpty" checked>
+                            <span>Eliminar líneas vacías</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <button id="clearButton" class="btn secondary">
+                        <i class="fas fa-eraser"></i>
+                        Limpiar
+                    </button>
+                    <button id="processButton" class="btn primary">
+                        <i class="fas fa-magic"></i>
+                        Ordenar
+                    </button>
+                </div>
+            </div>
+
+            <div class="output-section">
+                <div class="section-header">
+                    <label for="outputText">
+                        <i class="fas fa-file-export"></i> Resultado
+                    </label>
+                    <div class="output-stats">
+                        <span class="sorted-count">0 ordenadas</span>
+                        <span class="remaining-count">0 líneas</span>
+                    </div>
+                </div>
+                <textarea id="outputText" readonly placeholder="El texto ordenado aparecerá aquí..."></textarea>
+                <button id="copyButton" class="btn success">
+                    <i class="fas fa-copy"></i>
+                    Copiar Resultado
+                </button>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h3><i class="fas fa-info-circle"></i> Información</h3>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h4>Alfabético</h4>
+                    <p>Ordena las líneas alfabéticamente, opcionalmente ignorando mayúsculas/minúsculas</p>
+                </div>
+                <div class="info-card">
+                    <h4>Numérico</h4>
+                    <p>Ordena las líneas que comienzan con números en orden numérico</p>
+                </div>
+                <div class="info-card">
+                    <h4>Por Longitud</h4>
+                    <p>Ordena las líneas según su número de caracteres</p>
+                </div>
+                <div class="info-card">
+                    <h4>Aleatorio</h4>
+                    <p>Mezcla las líneas de forma aleatoria</p>
+                </div>
+                <div class="info-card">
+                    <h4>Opciones Adicionales</h4>
+                    <p>Personaliza el ordenamiento con opciones como ignorar artículos o invertir el orden</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/ordenar-lineas.js"></script>
+</body>
+</html>

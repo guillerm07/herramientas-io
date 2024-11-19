@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Códigos QR - Herramientas Online</title>
+    <meta name="description" content="Genera códigos QR personalizados para enlaces, texto, contactos y más.">
+    <link rel="stylesheet" href="css/generador-qr.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+<body>
+    <div class="back-button-container">
+        <a href="/" class="back-button">
+            <i class="fas fa-arrow-left"></i>
+            <span>Volver a Herramientas</span>
+        </a>
+    </div>
+
+    <div class="tool-container">
+        <div class="tool-header">
+            <h1><i class="fas fa-qrcode"></i> Generador de Códigos QR</h1>
+            <p class="tool-description">Crea códigos QR personalizados para cualquier propósito</p>
+        </div>
+
+        <div class="main-content">
+            <div class="controls-section">
+                <div class="input-group">
+                    <label for="qrType">Tipo de contenido</label>
+                    <select id="qrType">
+                        <option value="text">Texto / URL</option>
+                        <option value="email">Email</option>
+                        <option value="tel">Teléfono</option>
+                        <option value="sms">SMS</option>
+                        <option value="wifi">WiFi</option>
+                        <option value="vcard">Contacto (vCard)</option>
+                    </select>
+                </div>
+
+                <!-- Contenedor para campos dinámicos -->
+                <div id="dynamicFields">
+                    <!-- Los campos se generarán dinámicamente según el tipo seleccionado -->
+                </div>
+
+                <div class="options-group">
+                    <div class="option-row">
+                        <label for="qrSize">Tamaño</label>
+                        <select id="qrSize">
+                            <option value="128">Pequeño (128x128)</option>
+                            <option value="256" selected>Mediano (256x256)</option>
+                            <option value="512">Grande (512x512)</option>
+                            <option value="1024">Muy grande (1024x1024)</option>
+                        </select>
+                    </div>
+                    <div class="option-row">
+                        <label for="errorCorrection">Corrección de errores</label>
+                        <select id="errorCorrection">
+                            <option value="L">Baja (7%)</option>
+                            <option value="M" selected>Media (15%)</option>
+                            <option value="Q">Alta (25%)</option>
+                            <option value="H">Máxima (30%)</option>
+                        </select>
+                    </div>
+                    <div class="color-options">
+                        <div class="color-row">
+                            <label for="foregroundColor">Color principal</label>
+                            <input type="color" id="foregroundColor" value="#000000">
+                        </div>
+                        <div class="color-row">
+                            <label for="backgroundColor">Color de fondo</label>
+                            <input type="color" id="backgroundColor" value="#FFFFFF">
+                        </div>
+                    </div>
+                </div>
+
+                <button id="generateButton" class="btn primary">
+                    <i class="fas fa-magic"></i>
+                    Generar Código QR
+                </button>
+            </div>
+
+            <div class="result-section" style="display: none;">
+                <div class="qr-container">
+                    <div id="qrCode"></div>
+                    <div class="qr-actions">
+                        <button id="downloadPNG" class="btn secondary">
+                            <i class="fas fa-download"></i>
+                            Descargar PNG
+                        </button>
+                        <button id="downloadSVG" class="btn secondary">
+                            <i class="fas fa-download"></i>
+                            Descargar SVG
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-section">
+                <h3><i class="fas fa-info-circle"></i> Información</h3>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h4>Tipos de contenido</h4>
+                        <p>Genera QR para URLs, texto, contactos, WiFi, emails y más.</p>
+                    </div>
+                    <div class="info-card">
+                        <h4>Personalización</h4>
+                        <p>Ajusta el tamaño, colores y nivel de corrección de errores.</p>
+                    </div>
+                    <div class="info-card">
+                        <h4>Formatos</h4>
+                        <p>Descarga tu código QR en formato PNG o SVG de alta calidad.</p>
+                    </div>
+                    <div class="info-card">
+                        <h4>Privacidad</h4>
+                        <p>Todo el proceso se realiza en tu navegador. No se almacena ningún dato.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/generador-qr.js"></script>
+</body>
+</html>

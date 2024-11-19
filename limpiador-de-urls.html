@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Limpiar URLs - Herramientas Online</title>
+    <meta name="description" content="Limpia y formatea URLs eliminando parámetros innecesarios. Herramienta gratuita para optimizar enlaces.">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/limpiar-urls.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="back-button-container">
+        <a href="/" class="back-button">
+            <i class="fas fa-arrow-left"></i>
+            <span>Volver a Herramientas</span>
+        </a>
+    </div>
+
+    <div class="tool-container">
+        <div class="tool-header">
+            <h1><i class="fas fa-link"></i> Limpiar URLs</h1>
+            <p class="tool-description">Limpia y optimiza URLs eliminando parámetros innecesarios</p>
+        </div>
+
+        <div class="main-content">
+            <div class="input-section">
+                <div class="section-header">
+                    <label for="inputText">
+                        <i class="fas fa-file-import"></i> URLs Originales
+                    </label>
+                    <span class="url-count">0 URLs</span>
+                </div>
+                <textarea id="inputText" placeholder="Pega aquí tus URLs (una por línea)..."></textarea>
+            </div>
+
+            <div class="controls-section">
+                <div class="parameters-group">
+                    <h3>Parámetros a Eliminar</h3>
+                    <div class="parameters-input">
+                        <input type="text" id="parametersInput" placeholder="utm_source, fbclid, gclid, ...">
+                        <div class="parameters-help">
+                            <i class="fas fa-circle-info"></i>
+                            <span class="tooltip">
+                                Parámetros separados por comas.
+                                Se eliminarán de todas las URLs.
+                            </span>
+                        </div>
+                    </div>
+                    <div class="common-parameters">
+                        <button class="parameter-tag" data-params="utm_source,utm_medium,utm_campaign,utm_term,utm_content">
+                            UTM
+                        </button>
+                        <button class="parameter-tag" data-params="fbclid">
+                            Facebook
+                        </button>
+                        <button class="parameter-tag" data-params="gclid">
+                            Google
+                        </button>
+                        <button class="parameter-tag" data-params="ref,source">
+                            Referencias
+                        </button>
+                    </div>
+                </div>
+
+                <div class="options-group">
+                    <h3>Opciones</h3>
+                    <div class="checkbox-group">
+                        <label class="checkbox-option">
+                            <input type="checkbox" id="removeHash" checked>
+                            <span>Eliminar fragmentos (#)</span>
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" id="removeWWW" checked>
+                            <span>Eliminar www</span>
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" id="forceHTTPS" checked>
+                            <span>Forzar HTTPS</span>
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" id="removeTrailingSlash">
+                            <span>Eliminar barra final (/)</span>
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" id="decodePath" checked>
+                            <span>Decodificar ruta</span>
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" id="skipEmpty" checked>
+                            <span>Saltar líneas vacías</span>
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" id="removeDuplicates" checked>
+                            <span>Eliminar duplicados</span>
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" id="sortUrls">
+                            <span>Ordenar URLs</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <button id="clearButton" class="btn secondary">
+                        <i class="fas fa-eraser"></i>
+                        Limpiar
+                    </button>
+                    <button id="processButton" class="btn primary">
+                        <i class="fas fa-magic"></i>
+                        Procesar
+                    </button>
+                </div>
+            </div>
+
+            <div class="output-section">
+                <div class="section-header">
+                    <label for="outputText">
+                        <i class="fas fa-file-export"></i> URLs Limpiadas
+                    </label>
+                    <div class="output-stats">
+                        <span class="processed-count">0 procesadas</span>
+                        <span class="remaining-count">0 URLs</span>
+                    </div>
+                </div>
+                <textarea id="outputText" readonly placeholder="Las URLs limpiadas aparecerán aquí..."></textarea>
+                <button id="copyButton" class="btn success">
+                    <i class="fas fa-copy"></i>
+                    Copiar Resultado
+                </button>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h3><i class="fas fa-info-circle"></i> Información</h3>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h4>Parámetros UTM</h4>
+                    <p>Elimina parámetros de seguimiento de campañas de marketing</p>
+                </div>
+                <div class="info-card">
+                    <h4>Parámetros Sociales</h4>
+                    <p>Elimina identificadores de Facebook, Google y otras redes</p>
+                </div>
+                <div class="info-card">
+                    <h4>Optimización</h4>
+                    <p>Fuerza HTTPS y elimina elementos innecesarios</p>
+                </div>
+                <div class="info-card">
+                    <h4>Duplicados</h4>
+                    <p>Opción para eliminar URLs repetidas automáticamente</p>
+                </div>
+                <div class="info-card">
+                    <h4>Formato</h4>
+                    <p>Decodifica y formatea las URLs para mejor legibilidad</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/limpiar-urls.js"></script>
+</body>
+</html>

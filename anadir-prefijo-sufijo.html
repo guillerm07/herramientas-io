@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Añadir Prefijo/Sufijo - Herramientas Online</title>
+    <meta name="description" content="Añade prefijos y sufijos a cada línea de texto. Herramienta gratuita para modificar contenido.">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/prefijo-sufijo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="back-button-container">
+        <a href="/" class="back-button">
+            <i class="fas fa-arrow-left"></i>
+            <span>Volver a Herramientas</span>
+        </a>
+    </div>
+
+    <div class="tool-container">
+        <div class="tool-header">
+            <h1><i class="fas fa-indent"></i> Añadir Prefijo/Sufijo</h1>
+            <p class="tool-description">Añade texto al principio y/o final de cada línea</p>
+        </div>
+
+        <div class="main-content">
+            <div class="input-section">
+                <div class="section-header">
+                    <label for="inputText">
+                        <i class="fas fa-file-import"></i> Texto Original
+                    </label>
+                    <span class="line-count">0 líneas</span>
+                </div>
+                <textarea id="inputText" placeholder="Pega aquí tu texto..."></textarea>
+            </div>
+
+            <div class="controls-section">
+                <div class="prefix-suffix-group">
+                    <div class="prefix-field">
+                        <label for="prefixText">
+                            <i class="fas fa-angle-double-right"></i> Prefijo:
+                        </label>
+                        <input type="text" id="prefixText" placeholder="Texto a añadir al principio...">
+                    </div>
+
+                    <div class="suffix-field">
+                        <label for="suffixText">
+                            <i class="fas fa-angle-double-left"></i> Sufijo:
+                        </label>
+                        <input type="text" id="suffixText" placeholder="Texto a añadir al final...">
+                    </div>
+                </div>
+
+                <div class="options-group">
+                    <h3>Opciones</h3>
+                    
+                    <div class="checkbox-group">
+                        <label class="checkbox-option">
+                            <input type="checkbox" id="trimSpaces" checked>
+                            <span>Eliminar espacios al inicio y final</span>
+                        </label>
+                        
+                        <label class="checkbox-option">
+                            <input type="checkbox" id="skipEmpty" checked>
+                            <span>Saltar líneas vacías</span>
+                        </label>
+                        
+                        <label class="checkbox-option">
+                            <input type="checkbox" id="addNewLine">
+                            <span>Añadir línea nueva al final</span>
+                        </label>
+
+                        <label class="checkbox-option">
+                            <input type="checkbox" id="numberLines">
+                            <span>Numerar líneas</span>
+                        </label>
+
+                        <label class="checkbox-option">
+                            <input type="checkbox" id="preserveIndent">
+                            <span>Preservar indentación</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <button id="clearButton" class="btn secondary">
+                        <i class="fas fa-eraser"></i>
+                        Limpiar
+                    </button>
+                    <button id="processButton" class="btn primary">
+                        <i class="fas fa-magic"></i>
+                        Procesar
+                    </button>
+                </div>
+            </div>
+
+            <div class="output-section">
+                <div class="section-header">
+                    <label for="outputText">
+                        <i class="fas fa-file-export"></i> Resultado
+                    </label>
+                    <div class="output-stats">
+                        <span class="processed-count">0 procesadas</span>
+                        <span class="remaining-count">0 líneas</span>
+                    </div>
+                </div>
+                <textarea id="outputText" readonly placeholder="El texto modificado aparecerá aquí..."></textarea>
+                <button id="copyButton" class="btn success">
+                    <i class="fas fa-copy"></i>
+                    Copiar Resultado
+                </button>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h3><i class="fas fa-info-circle"></i> Información</h3>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h4>Prefijos</h4>
+                    <p>Añade texto al principio de cada línea</p>
+                </div>
+                <div class="info-card">
+                    <h4>Sufijos</h4>
+                    <p>Añade texto al final de cada línea</p>
+                </div>
+                <div class="info-card">
+                    <h4>Numeración</h4>
+                    <p>Añade números secuenciales al inicio de cada línea</p>
+                </div>
+                <div class="info-card">
+                    <h4>Indentación</h4>
+                    <p>Mantiene los espacios y tabulaciones originales</p>
+                </div>
+                <div class="info-card">
+                    <h4>Líneas Vacías</h4>
+                    <p>Opción para procesar o ignorar líneas en blanco</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/prefijo-sufijo.js"></script>
+</body>
+</html>

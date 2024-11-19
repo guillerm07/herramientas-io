@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Texto - Herramientas Online</title>
+    <meta name="description" content="Convierte texto a mayúsculas, minúsculas, título y más. Herramienta gratuita para transformar el formato de tu texto.">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/conversor-de-texto.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="back-button-container">
+        <a href="/" class="back-button">
+            <i class="fas fa-arrow-left"></i>
+            <span>Volver a Herramientas</span>
+        </a>
+    </div>
+
+    <div class="tool-container">
+        <div class="tool-header">
+            <h1><i class="fas fa-font"></i> Conversor de Texto</h1>
+            <p class="tool-description">Transforma tu texto a diferentes formatos: mayúsculas, minúsculas, título y más</p>
+        </div>
+
+        <div class="main-content">
+            <div class="input-section">
+                <div class="section-header">
+                    <label for="inputText">
+                        <i class="fas fa-file-import"></i> Texto a Convertir
+                    </label>
+                </div>
+                <textarea id="inputText" placeholder="Escribe o pega tu texto aquí..."></textarea>
+            </div>
+
+            <div class="controls-section">
+                <div class="conversion-options">
+                    <button class="conversion-btn" data-conversion="uppercase">
+                        <i class="fas fa-arrow-up"></i>
+                        MAYÚSCULAS
+                    </button>
+                    <button class="conversion-btn" data-conversion="lowercase">
+                        <i class="fas fa-arrow-down"></i>
+                        minúsculas
+                    </button>
+                    <button class="conversion-btn" data-conversion="capitalize">
+                        <i class="fas fa-font"></i>
+                        Tipo Título
+                    </button>
+                    <button class="conversion-btn" data-conversion="sentence">
+                        <i class="fas fa-paragraph"></i>
+                        Primera Letra
+                    </button>
+                    <button class="conversion-btn" data-conversion="alternate">
+                        <i class="fas fa-random"></i>
+                        aLtErNaDo
+                    </button>
+                    <button class="conversion-btn" data-conversion="inverse">
+                        <i class="fas fa-exchange-alt"></i>
+                        INVERSO
+                    </button>
+                </div>
+
+                <div class="action-buttons">
+                    <button id="clearButton" class="btn secondary">
+                        <i class="fas fa-eraser"></i>
+                        Limpiar
+                    </button>
+                    <button id="copyButton" class="btn primary">
+                        <i class="fas fa-copy"></i>
+                        Copiar
+                    </button>
+                </div>
+            </div>
+
+            <div class="output-section">
+                <div class="section-header">
+                    <label for="outputText">
+                        <i class="fas fa-file-export"></i> Resultado
+                    </label>
+                </div>
+                <textarea id="outputText" readonly placeholder="El texto convertido aparecerá aquí..."></textarea>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h3><i class="fas fa-info-circle"></i> Información</h3>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h4>MAYÚSCULAS</h4>
+                    <p>Convierte todo el texto a mayúsculas</p>
+                </div>
+                <div class="info-card">
+                    <h4>minúsculas</h4>
+                    <p>Convierte todo el texto a minúsculas</p>
+                </div>
+                <div class="info-card">
+                    <h4>Tipo Título</h4>
+                    <p>Capitaliza La Primera Letra De Cada Palabra</p>
+                </div>
+                <div class="info-card">
+                    <h4>Primera Letra</h4>
+                    <p>Capitaliza la primera letra de cada oración</p>
+                </div>
+                <div class="info-card">
+                    <h4>aLtErNaDo</h4>
+                    <p>Alterna entre mayúsculas y minúsculas</p>
+                </div>
+                <div class="info-card">
+                    <h4>INVERSO</h4>
+                    <p>Invierte mayúsculas y minúsculas del texto original</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/conversor-de-texto.js"></script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eliminar Acentos - Herramientas Online</title>
+    <meta name="description" content="Elimina acentos y caracteres diacríticos de tu texto. Herramienta gratuita para normalizar contenido.">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/eliminar-acentos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="back-button-container">
+        <a href="/" class="back-button">
+            <i class="fas fa-arrow-left"></i>
+            <span>Volver a Herramientas</span>
+        </a>
+    </div>
+
+    <div class="tool-container">
+        <div class="tool-header">
+            <h1><i class="fas fa-font"></i> Eliminar Acentos</h1>
+            <p class="tool-description">Elimina acentos y caracteres diacríticos de tu texto de forma rápida y sencilla</p>
+        </div>
+
+        <div class="main-content">
+            <div class="input-section">
+                <div class="section-header">
+                    <label for="inputText">
+                        <i class="fas fa-file-import"></i> Texto Original
+                    </label>
+                    <span class="char-count">0 caracteres</span>
+                </div>
+                <textarea id="inputText" placeholder="Pega aquí tu texto con acentos..."></textarea>
+            </div>
+
+            <div class="controls-section">
+                <div class="options-group">
+                    <h3>Opciones de Conversión</h3>
+                    
+                    <div class="checkbox-group">
+                        <label class="checkbox-option">
+                            <input type="checkbox" id="removeAccents" checked>
+                            <span>Eliminar acentos (á → a)</span>
+                        </label>
+                        
+                        <label class="checkbox-option">
+                            <input type="checkbox" id="removeDieresis" checked>
+                            <span>Eliminar diéresis (ü → u)</span>
+                        </label>
+                        
+                        <label class="checkbox-option">
+                            <input type="checkbox" id="removeSpecialN" checked>
+                            <span>Convertir ñ/Ñ (ñ → n)</span>
+                        </label>
+
+                        <label class="checkbox-option">
+                            <input type="checkbox" id="removeOtherDiacritics">
+                            <span>Eliminar otros diacríticos</span>
+                        </label>
+
+                        <label class="checkbox-option">
+                            <input type="checkbox" id="preserveCase" checked>
+                            <span>Mantener mayúsculas/minúsculas</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <button id="clearButton" class="btn secondary">
+                        <i class="fas fa-eraser"></i>
+                        Limpiar
+                    </button>
+                    <button id="processButton" class="btn primary">
+                        <i class="fas fa-magic"></i>
+                        Procesar
+                    </button>
+                </div>
+            </div>
+
+            <div class="output-section">
+                <div class="section-header">
+                    <label for="outputText">
+                        <i class="fas fa-file-export"></i> Resultado
+                    </label>
+                    <div class="output-stats">
+                        <span class="converted-count">0 convertidos</span>
+                        <span class="remaining-count">0 caracteres</span>
+                    </div>
+                </div>
+                <textarea id="outputText" readonly placeholder="El texto sin acentos aparecerá aquí..."></textarea>
+                <button id="copyButton" class="btn success">
+                    <i class="fas fa-copy"></i>
+                    Copiar Resultado
+                </button>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h3><i class="fas fa-info-circle"></i> Información</h3>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h4>Acentos</h4>
+                    <p>Elimina acentos manteniendo la letra base (á,é,í,ó,ú → a,e,i,o,u)</p>
+                </div>
+                <div class="info-card">
+                    <h4>Diéresis</h4>
+                    <p>Convierte letras con diéresis a su forma básica (ü → u)</p>
+                </div>
+                <div class="info-card">
+                    <h4>Letra Ñ</h4>
+                    <p>Convierte la letra ñ a n normal cuando se activa la opción</p>
+                </div>
+                <div class="info-card">
+                    <h4>Otros Diacríticos</h4>
+                    <p>Elimina otros caracteres especiales y marcas diacríticas</p>
+                </div>
+                <div class="info-card">
+                    <h4>Mayúsculas/Minúsculas</h4>
+                    <p>Mantiene el formato de mayúsculas y minúsculas del texto original</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/eliminar-acentos.js"></script>
+</body>
+</html>

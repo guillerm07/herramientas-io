@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador de Texto - Herramientas Online</title>
+    <meta name="description" content="Analiza tu texto: cuenta caracteres, palabras, oraciones, líneas y frecuencia de palabras de forma gratuita.">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/contador-de-texto.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="tool-container">
+        <div class="back-button-container">
+    <a href="/" class="back-button">
+        <i class="fas fa-arrow-left"></i>
+        <span>Volver a Herramientas</span>
+    </a>
+</div>
+        <div class="tool-header">
+            <h1><i class="fas fa-calculator"></i> Contador de Texto</h1>
+            <p class="tool-description">Analiza tu texto: caracteres, palabras, oraciones, líneas y frecuencia de palabras</p>
+        </div>
+
+        <div class="main-content">
+            <div class="input-section">
+                <div class="section-header">
+                    <label for="inputText">
+                        <i class="fas fa-file-import"></i> Texto a Analizar
+                    </label>
+                </div>
+                <textarea id="inputText" placeholder="Escribe o pega tu texto aquí para analizarlo..."></textarea>
+                <button id="clearButton" class="btn secondary">
+                    <i class="fas fa-eraser"></i> Limpiar
+                </button>
+            </div>
+
+            <div class="stats-container">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <i class="fas fa-text-width"></i>
+                        <div class="stat-info">
+                            <h3>Caracteres</h3>
+                            <div class="stat-details">
+                                <p>Con espacios: <span id="charCount">0</span></p>
+                                <p>Sin espacios: <span id="charNoSpaceCount">0</span></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <i class="fas fa-font"></i>
+                        <div class="stat-info">
+                            <h3>Palabras</h3>
+                            <div class="stat-details">
+                                <p>Total: <span id="wordCount">0</span></p>
+                                <p>Únicas: <span id="uniqueWordCount">0</span></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <i class="fas fa-align-left"></i>
+                        <div class="stat-info">
+                            <h3>Líneas</h3>
+                            <div class="stat-details">
+                                <p>Total: <span id="lineCount">0</span></p>
+                                <p>Párrafos: <span id="paragraphCount">0</span></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <i class="fas fa-paragraph"></i>
+                        <div class="stat-info">
+                            <h3>Oraciones</h3>
+                            <div class="stat-details">
+                                <p>Total: <span id="sentenceCount">0</span></p>
+                                <p>Promedio palabras: <span id="avgWordsPerSentence">0</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="word-frequency-section">
+                    <h3><i class="fas fa-chart-bar"></i> Frecuencia de Palabras</h3>
+                    <div class="frequency-controls">
+                        <div class="search-box">
+                            <i class="fas fa-search"></i>
+                            <input type="text" id="wordSearch" placeholder="Buscar palabra...">
+                        </div>
+                        <select id="sortFrequency">
+                            <option value="frequency">Ordenar por frecuencia</option>
+                            <option value="alphabetical">Ordenar alfabéticamente</option>
+                        </select>
+                    </div>
+                    <div class="frequency-table-container">
+                        <table id="frequencyTable">
+                            <thead>
+                                <tr>
+                                    <th>Palabra</th>
+                                    <th>Frecuencia</th>
+                                    <th>Porcentaje</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Se llenará dinámicamente -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/contador-de-texto.js"></script>
+</body>
+</html>

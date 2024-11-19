@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscar y Reemplazar - Herramientas Online</title>
+    <meta name="description" content="Busca y reemplaza texto con opciones avanzadas. Herramienta gratuita para editar contenido.">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/buscar-reemplazar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="back-button-container">
+        <a href="/" class="back-button">
+            <i class="fas fa-arrow-left"></i>
+            <span>Volver a Herramientas</span>
+        </a>
+    </div>
+
+    <div class="tool-container">
+        <div class="tool-header">
+            <h1><i class="fas fa-search-replace"></i> Buscar y Reemplazar</h1>
+            <p class="tool-description">Busca y reemplaza texto con opciones avanzadas de búsqueda</p>
+        </div>
+
+        <div class="main-content">
+            <div class="input-section">
+                <div class="section-header">
+                    <label for="inputText">
+                        <i class="fas fa-file-import"></i> Texto Original
+                    </label>
+                    <span class="char-count">0 caracteres</span>
+                </div>
+                <textarea id="inputText" placeholder="Pega aquí tu texto..."></textarea>
+            </div>
+
+            <div class="controls-section">
+                <div class="search-replace-group">
+                    <div class="search-field">
+                        <label for="searchText">
+                            <i class="fas fa-search"></i> Buscar:
+                        </label>
+                        <input type="text" id="searchText" placeholder="Texto a buscar...">
+                        <span class="match-count">0 coincidencias</span>
+                    </div>
+
+                    <div class="replace-field">
+                        <label for="replaceText">
+                            <i class="fas fa-exchange-alt"></i> Reemplazar por:
+                        </label>
+                        <input type="text" id="replaceText" placeholder="Texto de reemplazo...">
+                    </div>
+                </div>
+
+                <div class="options-group">
+                    <h3>Opciones de Búsqueda</h3>
+                    
+                    <div class="checkbox-group">
+                        <label class="checkbox-option">
+                            <input type="checkbox" id="caseSensitive">
+                            <span>Distinguir mayúsculas/minúsculas</span>
+                        </label>
+                        
+                        <label class="checkbox-option">
+                            <input type="checkbox" id="wholeWord">
+                            <span>Palabras completas</span>
+                        </label>
+                        
+                        <label class="checkbox-option">
+                            <input type="checkbox" id="useRegex">
+                            <span>Usar expresiones regulares</span>
+                        </label>
+
+                        <label class="checkbox-option">
+                            <input type="checkbox" id="multiline">
+                            <span>Búsqueda multilínea</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <button id="clearButton" class="btn secondary">
+                        <i class="fas fa-eraser"></i>
+                        Limpiar
+                    </button>
+                    <button id="findButton" class="btn primary">
+                        <i class="fas fa-search"></i>
+                        Buscar
+                    </button>
+                    <button id="replaceButton" class="btn primary">
+                        <i class="fas fa-exchange-alt"></i>
+                        Reemplazar
+                    </button>
+                    <button id="replaceAllButton" class="btn primary">
+                        <i class="fas fa-sync-alt"></i>
+                        Reemplazar Todo
+                    </button>
+                </div>
+            </div>
+
+            <div class="output-section">
+                <div class="section-header">
+                    <label for="outputText">
+                        <i class="fas fa-file-export"></i> Resultado
+                    </label>
+                    <div class="output-stats">
+                        <span class="replaced-count">0 reemplazos</span>
+                        <span class="remaining-count">0 caracteres</span>
+                    </div>
+                </div>
+                <textarea id="outputText" readonly placeholder="El texto modificado aparecerá aquí..."></textarea>
+                <button id="copyButton" class="btn success">
+                    <i class="fas fa-copy"></i>
+                    Copiar Resultado
+                </button>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h3><i class="fas fa-info-circle"></i> Información</h3>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h4>Búsqueda Simple</h4>
+                    <p>Busca texto exacto con o sin distinción de mayúsculas/minúsculas</p>
+                </div>
+                <div class="info-card">
+                    <h4>Palabras Completas</h4>
+                    <p>Busca solo palabras completas, ignorando coincidencias parciales</p>
+                </div>
+                <div class="info-card">
+                    <h4>Expresiones Regulares</h4>
+                    <p>Usa patrones de búsqueda avanzados con expresiones regulares</p>
+                </div>
+                <div class="info-card">
+                    <h4>Multilínea</h4>
+                    <p>Busca coincidencias a través de múltiples líneas de texto</p>
+                </div>
+                <div class="info-card">
+                    <h4>Reemplazo Múltiple</h4>
+                    <p>Reemplaza todas las coincidencias de una vez o una por una</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/buscar-reemplazar.js"></script>
+</body>
+</html>

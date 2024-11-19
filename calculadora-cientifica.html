@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Científica - Herramientas Online</title>
+    <meta name="description" content="Calculadora científica online con funciones trigonométricas, logarítmicas y más">
+    <link rel="stylesheet" href="css/calculadora-cientifica.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="back-button-container">
+        <a href="/" class="back-button">
+            <i class="fas fa-arrow-left"></i>
+            <span>Volver a Herramientas</span>
+        </a>
+    </div>
+
+    <div class="tool-container">
+        <div class="tool-header">
+            <h1><i class="fas fa-calculator"></i> Calculadora Científica</h1>
+            <p class="tool-description">Realiza cálculos matemáticos avanzados</p>
+        </div>
+
+        <div class="calculator">
+            <div class="display">
+                <div class="history" id="history"></div>
+                <div class="expression" id="expression">0</div>
+                <div class="result" id="result"></div>
+            </div>
+
+            <div class="keypad">
+                <!-- Primera fila - Funciones de memoria y constantes -->
+                <button class="key function" data-key="mc">MC</button>
+                <button class="key function" data-key="mr">MR</button>
+                <button class="key function" data-key="m+">M+</button>
+                <button class="key function" data-key="m-">M-</button>
+                <button class="key constant" data-key="pi">π</button>
+                <button class="key constant" data-key="e">e</button>
+
+                <!-- Segunda fila - Funciones trigonométricas -->
+                <button class="key function" data-key="sin">sin</button>
+                <button class="key function" data-key="cos">cos</button>
+                <button class="key function" data-key="tan">tan</button>
+                <button class="key function" data-key="rad">Rad</button>
+                <button class="key function" data-key="deg">Deg</button>
+                <button class="key operator" data-key="^">^</button>
+
+                <!-- Tercera fila - Funciones logarítmicas -->
+                <button class="key function" data-key="log">log</button>
+                <button class="key function" data-key="ln">ln</button>
+                <button class="key function" data-key="sqrt">√</button>
+                <button class="key parenthesis" data-key="(">(</button>
+                <button class="key parenthesis" data-key=")">)</button>
+                <button class="key operator" data-key="%">%</button>
+
+                <!-- Cuarta fila - Números y operaciones básicas -->
+                <button class="key number" data-key="7">7</button>
+                <button class="key number" data-key="8">8</button>
+                <button class="key number" data-key="9">9</button>
+                <button class="key clear" data-key="del">DEL</button>
+                <button class="key clear" data-key="ac">AC</button>
+                <button class="key operator" data-key="/">÷</button>
+
+                <!-- Quinta fila -->
+                <button class="key number" data-key="4">4</button>
+                <button class="key number" data-key="5">5</button>
+                <button class="key number" data-key="6">6</button>
+                <button class="key function" data-key="exp">EXP</button>
+                <button class="key function" data-key="mod">mod</button>
+                <button class="key operator" data-key="*">×</button>
+
+                <!-- Sexta fila -->
+                <button class="key number" data-key="1">1</button>
+                <button class="key number" data-key="2">2</button>
+                <button class="key number" data-key="3">3</button>
+                <button class="key function" data-key="abs">|x|</button>
+                <button class="key function" data-key="fact">n!</button>
+                <button class="key operator" data-key="-">−</button>
+
+                <!-- Séptima fila -->
+                <button class="key number" data-key="0">0</button>
+                <button class="key number" data-key=".">.</button>
+                <button class="key function" data-key="ans">ANS</button>
+                <button class="key function" data-key="inv">1/x</button>
+                <button class="key equals" data-key="=">=</button>
+                <button class="key operator" data-key="+">+</button>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h3><i class="fas fa-info-circle"></i> Información</h3>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h4>Funciones Trigonométricas</h4>
+                    <p>sin, cos, tan en radianes o grados</p>
+                </div>
+                <div class="info-card">
+                    <h4>Funciones Logarítmicas</h4>
+                    <p>log (base 10), ln (base e), exponenciales</p>
+                </div>
+                <div class="info-card">
+                    <h4>Memoria</h4>
+                    <p>MC (borrar), MR (recuperar), M+ (sumar), M- (restar)</p>
+                </div>
+                <div class="info-card">
+                    <h4>Constantes</h4>
+                    <p>π (Pi = 3.14159...), e (2.71828...)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/calculadora-cientifica.js"></script>
+</body>
+</html>

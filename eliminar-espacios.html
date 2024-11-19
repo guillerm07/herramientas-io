@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eliminar Espacios - Herramientas Online</title>
+    <meta name="description" content="Elimina espacios en blanco innecesarios de tu texto. Herramienta gratuita para limpiar y optimizar contenido.">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/eliminar-espacios.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="back-button-container">
+        <a href="/" class="back-button">
+            <i class="fas fa-arrow-left"></i>
+            <span>Volver a Herramientas</span>
+        </a>
+    </div>
+
+    <div class="tool-container">
+        <div class="tool-header">
+            <h1><i class="fas fa-compress-arrows-alt"></i> Eliminar Espacios</h1>
+            <p class="tool-description">Elimina espacios en blanco innecesarios y optimiza tu texto</p>
+        </div>
+
+        <div class="main-content">
+            <div class="input-section">
+                <div class="section-header">
+                    <label for="inputText">
+                        <i class="fas fa-file-import"></i> Texto Original
+                    </label>
+                    <span class="char-count">0 caracteres</span>
+                </div>
+                <textarea id="inputText" placeholder="Pega aquí tu texto con espacios innecesarios..."></textarea>
+            </div>
+
+            <div class="controls-section">
+                <div class="options-group">
+                    <h3>Opciones de Limpieza</h3>
+                    
+                    <div class="checkbox-group">
+                        <label class="checkbox-option">
+                            <input type="checkbox" id="trimSpaces" checked>
+                            <span>Eliminar espacios al inicio y final</span>
+                        </label>
+                        
+                        <label class="checkbox-option">
+                            <input type="checkbox" id="multipleSpaces" checked>
+                            <span>Reducir espacios múltiples</span>
+                        </label>
+                        
+                        <label class="checkbox-option">
+                            <input type="checkbox" id="lineBreaks">
+                            <span>Eliminar saltos de línea</span>
+                        </label>
+
+                        <label class="checkbox-option">
+                            <input type="checkbox" id="tabs">
+                            <span>Eliminar tabulaciones</span>
+                        </label>
+
+                        <label class="checkbox-option">
+                            <input type="checkbox" id="nonBreakingSpaces">
+                            <span>Convertir espacios especiales</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <button id="clearButton" class="btn secondary">
+                        <i class="fas fa-eraser"></i>
+                        Limpiar
+                    </button>
+                    <button id="processButton" class="btn primary">
+                        <i class="fas fa-magic"></i>
+                        Procesar
+                    </button>
+                </div>
+            </div>
+
+            <div class="output-section">
+                <div class="section-header">
+                    <label for="outputText">
+                        <i class="fas fa-file-export"></i> Resultado
+                    </label>
+                    <div class="output-stats">
+                        <span class="removed-count">0 eliminados</span>
+                        <span class="remaining-count">0 caracteres</span>
+                    </div>
+                </div>
+                <textarea id="outputText" readonly placeholder="El texto sin espacios innecesarios aparecerá aquí..."></textarea>
+                <button id="copyButton" class="btn success">
+                    <i class="fas fa-copy"></i>
+                    Copiar Resultado
+                </button>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h3><i class="fas fa-info-circle"></i> Información</h3>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h4>Espacios Inicio/Final</h4>
+                    <p>Elimina espacios en blanco al principio y final del texto</p>
+                </div>
+                <div class="info-card">
+                    <h4>Espacios Múltiples</h4>
+                    <p>Reduce varios espacios consecutivos a uno solo</p>
+                </div>
+                <div class="info-card">
+                    <h4>Saltos de Línea</h4>
+                    <p>Elimina todos los saltos de línea del texto</p>
+                </div>
+                <div class="info-card">
+                    <h4>Tabulaciones</h4>
+                    <p>Elimina todas las tabulaciones del texto</p>
+                </div>
+                <div class="info-card">
+                    <h4>Espacios Especiales</h4>
+                    <p>Convierte espacios no rompibles y otros caracteres especiales</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/eliminar-espacios.js"></script>
+</body>
+</html>

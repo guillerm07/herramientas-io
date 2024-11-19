@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Separador por Género - Herramientas Online</title>
+    <meta name="description" content="Herramienta gratuita para separar palabras por género y número gramatical. Organiza fácilmente tus listas de palabras.">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/separador-por-genero.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="back-button-container">
+        <a href="/" class="back-button">
+            <i class="fas fa-arrow-left"></i>
+            <span>Volver a Herramientas</span>
+        </a>
+    </div>
+
+    <div class="tool-container">
+        <div class="tool-header">
+            <h1><i class="fas fa-venus-mars"></i> Separador por Género</h1>
+            <p class="tool-description">Separa automáticamente palabras por género (masculino/femenino) y número (singular/plural)</p>
+        </div>
+
+        <div class="main-content">
+            <div class="input-section">
+                <div class="section-header">
+                    <label for="inputText">
+                        <i class="fas fa-file-import"></i> Lista de Palabras
+                    </label>
+                </div>
+                <textarea id="inputText" placeholder="Introduce tu lista de palabras (una por línea)..."></textarea>
+                <div class="input-controls">
+                    <button id="clearButton" class="btn secondary">
+                        <i class="fas fa-eraser"></i>
+                        Limpiar
+                    </button>
+                    <button id="processButton" class="btn primary">
+                        <i class="fas fa-magic"></i>
+                        Procesar
+                    </button>
+                </div>
+            </div>
+
+            <div class="results-grid">
+                <div class="result-card">
+                    <h3><i class="fas fa-mars"></i> Masculino Singular</h3>
+                    <div class="result-content">
+                        <textarea id="masculinoSingular" readonly></textarea>
+                        <button class="copy-btn" data-target="masculinoSingular">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="result-card">
+                    <h3><i class="fas fa-venus"></i> Femenino Singular</h3>
+                    <div class="result-content">
+                        <textarea id="femeninoSingular" readonly></textarea>
+                        <button class="copy-btn" data-target="femeninoSingular">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="result-card">
+                    <h3><i class="fas fa-mars"></i> Masculino Plural</h3>
+                    <div class="result-content">
+                        <textarea id="masculinoPlural" readonly></textarea>
+                        <button class="copy-btn" data-target="masculinoPlural">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="result-card">
+                    <h3><i class="fas fa-venus"></i> Femenino Plural</h3>
+                    <div class="result-content">
+                        <textarea id="femeninoPlural" readonly></textarea>
+                        <button class="copy-btn" data-target="femeninoPlural">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="result-card full-width">
+                    <h3><i class="fas fa-question-circle"></i> No Clasificados</h3>
+                    <div class="result-content">
+                        <textarea id="noClasificados" readonly></textarea>
+                        <button class="copy-btn" data-target="noClasificados">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/separador-por-genero.js"></script>
+</body>
+</html>

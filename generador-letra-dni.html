@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Letra DNI - Herramientas Online</title>
+    <meta name="description" content="Calcula la letra del DNI a partir de su número. Herramienta gratuita y fácil de usar.">
+    <link rel="stylesheet" href="css/generador-letra-dni.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="back-button-container">
+        <a href="/" class="back-button">
+            <i class="fas fa-arrow-left"></i>
+            <span>Volver a Herramientas</span>
+        </a>
+    </div>
+
+    <div class="tool-container">
+        <div class="tool-header">
+            <h1><i class="fas fa-id-card"></i> Generador de Letra DNI</h1>
+            <p class="tool-description">Calcula la letra correspondiente a un número de DNI</p>
+        </div>
+
+        <div class="main-content">
+            <div class="input-section">
+                <div class="input-group">
+                    <input type="text" id="dniNumber" maxlength="8" placeholder="Introduce el número de DNI">
+                    <button id="calculateButton" class="btn primary">
+                        <i class="fas fa-calculator"></i>
+                        Calcular Letra
+                    </button>
+                </div>
+                <div class="input-help">
+                    Introduce los 8 dígitos del DNI sin la letra
+                </div>
+            </div>
+
+            <div class="result-section" style="display: none;">
+                <div class="result-card">
+                    <div class="result-header">Resultado</div>
+                    <div class="result-content">
+                        <div class="dni-display">
+                            <span id="displayNumber"></span>
+                            <span id="displayLetter" class="letter"></span>
+                        </div>
+                        <button id="copyButton" class="btn secondary">
+                            <i class="fas fa-copy"></i>
+                            Copiar DNI Completo
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-section">
+                <h3><i class="fas fa-info-circle"></i> Información</h3>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h4>¿Cómo se calcula?</h4>
+                        <p>La letra del DNI se calcula dividiendo el número entre 23 y usando el resto para determinar la letra según una tabla oficial.</p>
+                    </div>
+                    <div class="info-card">
+                        <h4>Letras válidas</h4>
+                        <p>Las letras utilizadas son: TRWAGMYFPDXBNJZSQVHLCKE, donde cada posición corresponde al resto de la división.</p>
+                    </div>
+                    <div class="info-card">
+                        <h4>Formato correcto</h4>
+                        <p>El DNI debe tener 8 dígitos. Si tiene menos, se añaden ceros a la izquierda.</p>
+                    </div>
+                    <div class="info-card">
+                        <h4>Privacidad</h4>
+                        <p>Esta herramienta funciona completamente en tu navegador. No se almacena ningún dato.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/generador-letra-dni.js"></script>
+</body>
+</html>

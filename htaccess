@@ -1,0 +1,9 @@
+RewriteEngine On
+
+# Redirigir URLs sin .html
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ $1.html [L]
+
+# Establecer index.html como página de inicio
+DirectoryIndex index.html

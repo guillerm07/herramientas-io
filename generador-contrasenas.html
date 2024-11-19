@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Contraseñas - Herramientas Online</title>
+    <meta name="description" content="Genera contraseñas seguras y personalizadas con diferentes opciones de configuración.">
+    <link rel="stylesheet" href="css/generador-contrasenas.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="back-button-container">
+        <a href="/" class="back-button">
+            <i class="fas fa-arrow-left"></i>
+            <span>Volver a Herramientas</span>
+        </a>
+    </div>
+
+    <div class="tool-container">
+        <div class="tool-header">
+            <h1><i class="fas fa-key"></i> Generador de Contraseñas</h1>
+            <p class="tool-description">Crea contraseñas seguras y personalizadas según tus necesidades</p>
+        </div>
+
+        <div class="main-content">
+            <div class="password-display">
+                <input type="text" id="passwordOutput" readonly>
+                <button id="copyButton" class="btn icon-button" title="Copiar contraseña">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <button id="refreshButton" class="btn icon-button" title="Generar nueva contraseña">
+                    <i class="fas fa-sync-alt"></i>
+                </button>
+            </div>
+
+            <div class="password-strength">
+                <div class="strength-meter">
+                    <div class="strength-bar"></div>
+                </div>
+                <span class="strength-text">Seguridad de la contraseña</span>
+            </div>
+
+            <div class="controls-section">
+                <div class="length-control">
+                    <label for="passwordLength">Longitud: <span id="lengthValue">16</span></label>
+                    <input type="range" id="passwordLength" min="8" max="64" value="16">
+                </div>
+
+                <div class="options-group">
+                    <label class="checkbox-option">
+                        <input type="checkbox" id="includeUppercase" checked>
+                        <span>Mayúsculas (A-Z)</span>
+                    </label>
+                    <label class="checkbox-option">
+                        <input type="checkbox" id="includeLowercase" checked>
+                        <span>Minúsculas (a-z)</span>
+                    </label>
+                    <label class="checkbox-option">
+                        <input type="checkbox" id="includeNumbers" checked>
+                        <span>Números (0-9)</span>
+                    </label>
+                    <label class="checkbox-option">
+                        <input type="checkbox" id="includeSymbols" checked>
+                        <span>Símbolos (!@#$%^&*)</span>
+                    </label>
+                    <label class="checkbox-option">
+                        <input type="checkbox" id="excludeSimilar">
+                        <span>Excluir similares (l, 1, I, o, 0, O)</span>
+                    </label>
+                    <label class="checkbox-option">
+                        <input type="checkbox" id="excludeAmbiguous">
+                        <span>Excluir ambiguos ({}, [], (), /\, etc.)</span>
+                    </label>
+                </div>
+
+                <button id="generateButton" class="btn primary">
+                    <i class="fas fa-magic"></i>
+                    Generar Contraseña
+                </button>
+            </div>
+
+            <div class="info-section">
+                <h3><i class="fas fa-info-circle"></i> Consejos de Seguridad</h3>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h4>Longitud</h4>
+                        <p>Usa contraseñas de al menos 12 caracteres para mayor seguridad</p>
+                    </div>
+                    <div class="info-card">
+                        <h4>Variedad</h4>
+                        <p>Combina diferentes tipos de caracteres para aumentar la complejidad</p>
+                    </div>
+                    <div class="info-card">
+                        <h4>Unicidad</h4>
+                        <p>Utiliza contraseñas diferentes para cada servicio</p>
+                    </div>
+                    <div class="info-card">
+                        <h4>Almacenamiento</h4>
+                        <p>Usa un gestor de contraseñas para guardarlas de forma segura</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/generador-contrasenas.js"></script>
+</body>
+</html>

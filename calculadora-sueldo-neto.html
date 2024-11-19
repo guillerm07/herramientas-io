@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Sueldo Neto - Herramientas Online</title>
+    <meta name="description" content="Calcula tu sueldo neto a partir del bruto anual, incluyendo IRPF y Seguridad Social.">
+    <link rel="stylesheet" href="css/calculadora-sueldo-neto.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="back-button-container">
+        <a href="/" class="back-button">
+            <i class="fas fa-arrow-left"></i>
+            <span>Volver a Herramientas</span>
+        </a>
+    </div>
+
+    <div class="tool-container">
+        <div class="tool-header">
+            <h1><i class="fas fa-money-bill-wave"></i> Calculadora de Sueldo Neto</h1>
+            <p class="tool-description">Calcula tu salario neto mensual y anual a partir del bruto</p>
+        </div>
+
+        <div class="main-content">
+            <div class="input-section">
+                <div class="input-group">
+                    <label for="salarioBruto">Salario Bruto Anual</label>
+                    <div class="input-with-icon">
+                        <input type="number" id="salarioBruto" placeholder="Ej: 30000" min="0" step="1000">
+                        <span class="currency">€</span>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="pagas">Número de Pagas</label>
+                    <select id="pagas">
+                        <option value="12">12 pagas</option>
+                        <option value="14" selected>14 pagas</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="comunidad">Comunidad Autónoma</label>
+                    <select id="comunidad">
+                        <option value="madrid">Madrid</option>
+                        <option value="cataluna">Cataluña</option>
+                        <option value="andalucia">Andalucía</option>
+                        <!-- Añadir resto de comunidades -->
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="situacion">Situación Personal</label>
+                    <select id="situacion">
+                        <option value="soltero">Soltero/a sin hijos</option>
+                        <option value="casado">Casado/a</option>
+                        <option value="monoparental">Familia monoparental</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="result-section" style="display: none;">
+                <div class="result-grid">
+                    <div class="result-card">
+                        <h3>Neto Mensual</h3>
+                        <div class="amount" id="netoMensual">0 €</div>
+                        <div class="detail">Por <span id="numPagas">14</span> pagas</div>
+                    </div>
+                    <div class="result-card">
+                        <h3>Neto Anual</h3>
+                        <div class="amount" id="netoAnual">0 €</div>
+                        <div class="detail">Total año</div>
+                    </div>
+                </div>
+
+                <div class="deductions-section">
+                    <h3>Deducciones</h3>
+                    <div class="deduction-item">
+                        <span>IRPF</span>
+                        <div class="deduction-amount" id="irpf">0 €</div>
+                    </div>
+                    <div class="deduction-item">
+                        <span>Seguridad Social</span>
+                        <div class="deduction-amount" id="seguridadSocial">0 €</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="controls-section">
+                <button id="calculateButton" class="btn primary">
+                    <i class="fas fa-calculator"></i>
+                    Calcular Sueldo Neto
+                </button>
+            </div>
+
+            <div class="info-section">
+                <h3><i class="fas fa-info-circle"></i> Información</h3>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h4>IRPF</h4>
+                        <p>El tipo de IRPF varía según tu salario y comunidad autónoma.</p>
+                    </div>
+                    <div class="info-card">
+                        <h4>Seguridad Social</h4>
+                        <p>La cotización general es aproximadamente el 6.35% del salario bruto.</p>
+                    </div>
+                    <div class="info-card">
+                        <h4>Cálculo Aproximado</h4>
+                        <p>Esta calculadora ofrece una estimación. Consulta con un profesional para casos específicos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/calculadora-sueldo-neto.js"></script>
+</body>
+</html>
