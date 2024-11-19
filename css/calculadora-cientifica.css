@@ -1,0 +1,299 @@
+/* css/calculadora-cientifica.css */
+:root {
+    --primary-gradient: linear-gradient(135deg, #2563eb, #1e40af);
+    --secondary-gradient: linear-gradient(135deg, #64748b, #475569);
+    --success-gradient: linear-gradient(135deg, #22c55e, #16a34a);
+    --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --hover-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --key-size: 60px;
+    --key-gap: 8px;
+    --display-bg: #1e293b;
+}
+
+/* Botón de volver */
+.back-button-container {
+    max-width: 1200px;
+    margin: 0 auto 1rem auto;
+    padding: 0 2rem;
+}
+
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: var(--primary-gradient);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: var(--card-shadow);
+}
+
+.back-button:hover {
+    transform: translateX(-5px);
+    box-shadow: var(--hover-shadow);
+}
+
+/* Contenedor principal */
+.tool-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: var(--card-shadow);
+}
+
+.tool-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #f1f5f9;
+}
+
+.tool-header h1 {
+    color: #1e40af;
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.tool-header i {
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Calculadora */
+.calculator {
+    max-width: 450px;
+    margin: 0 auto 2rem;
+    background: #f8fafc;
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: var(--card-shadow);
+}
+
+/* Display */
+.display {
+    background: var(--display-bg);
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 0.5rem;
+}
+
+.history {
+    color: #94a3b8;
+    font-size: 0.9rem;
+    min-height: 1.2em;
+    text-align: right;
+}
+
+.expression {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: right;
+    word-break: break-all;
+}
+
+.result {
+    color: #22c55e;
+    font-size: 1.2rem;
+    text-align: right;
+    min-height: 1.5em;
+}
+
+/* Teclado */
+.keypad {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: var(--key-gap);
+}
+
+/* Teclas */
+.key {
+    width: 100%;
+    height: var(--key-size);
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: white;
+    color: #1e293b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--card-shadow);
+}
+
+.key:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--hover-shadow);
+}
+
+.key:active {
+    transform: translateY(1px);
+}
+
+/* Estilos específicos por tipo de tecla */
+.key.number {
+    background: white;
+}
+
+.key.operator {
+    background: #f1f5f9;
+    color: #2563eb;
+}
+
+.key.function {
+    background: #f1f5f9;
+    color: #1e40af;
+    font-size: 0.9rem;
+}
+
+.key.constant {
+    background: #f1f5f9;
+    color: #1e40af;
+}
+
+.key.clear {
+    background: #fee2e2;
+    color: #ef4444;
+}
+
+.key.equals {
+    background: var(--primary-gradient);
+    color: white;
+}
+
+.key.parenthesis {
+    background: #f1f5f9;
+    color: #1e40af;
+}
+
+/* Info Section */
+.info-section {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 2px solid #f1f5f9;
+}
+
+.info-section h3 {
+    color: #1e40af;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.info-card {
+    background: #f8fafc;
+    padding: 1.5rem;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--hover-shadow);
+}
+
+.info-card h4 {
+    color: #1e40af;
+    margin-bottom: 0.5rem;
+}
+
+.info-card p {
+    color: #64748b;
+    font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    :root {
+        --key-size: 50px;
+        --key-gap: 6px;
+    }
+
+    .tool-container {
+        margin: 1rem;
+        padding: 1rem;
+    }
+
+    .calculator {
+        padding: 1rem;
+    }
+
+    .display {
+        padding: 1rem;
+        min-height: 120px;
+    }
+
+    .key {
+        font-size: 1rem;
+    }
+
+    .key.function {
+        font-size: 0.8rem;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        --key-size: 45px;
+        --key-gap: 4px;
+    }
+
+    .expression {
+        font-size: 1.2rem;
+    }
+
+    .result {
+        font-size: 1rem;
+    }
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.calculator {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* Estado activo de las teclas */
+.key.active {
+    background: #e2e8f0;
+    transform: translateY(1px);
+}
